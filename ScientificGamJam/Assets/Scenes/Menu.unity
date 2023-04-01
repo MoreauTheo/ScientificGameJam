@@ -463,6 +463,99 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &455808479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 455808481}
+  - component: {fileID: 455808480}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &455808480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455808479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b112d47d745eb14bb7372913f983d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 44adab3c532d55e489b7dab2643fc578, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Ambiance
+    clip: {fileID: 8300000, guid: 6beb96bf0e7a997479eddaacc5514b8a, type: 3}
+    volume: 0.415
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Danger
+    clip: {fileID: 8300000, guid: ab68c67229c4f6248b2c7b0acba78f83, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GoodChoice
+    clip: {fileID: 8300000, guid: d07b65f1cd887864e812de85cfede25e, type: 3}
+    volume: 0.275
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ReponseVide
+    clip: {fileID: 8300000, guid: 64f928ef50d6ec647806d9cb1a5cc471, type: 3}
+    volume: 0.185
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BadChoice
+    clip: {fileID: 8300000, guid: f98da82824404904c990f069f6ea4dc0, type: 3}
+    volume: 0.297
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Velcro
+    clip: {fileID: 8300000, guid: 2b979319887ab87418149ca22d568ea7, type: 3}
+    volume: 0.297
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BoutonBip
+    clip: {fileID: 8300000, guid: 7262fa1008718ad40afe2e6c3a365b0c, type: 3}
+    volume: 0.297
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &455808481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455808479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.53544337, y: 3.9202976, z: -9.691814}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146106174
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1070,7 @@ GameObject:
   - component: {fileID: 2019385428}
   - component: {fileID: 2019385427}
   m_Layer: 5
-  m_Name: Image
+  m_Name: AideJeu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,9 +9,15 @@ public class MenuManager : MonoBehaviour
     bool isAfficher = false;
     public Image tuto;
 
+    public void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Theme");
+    }
+
     public void NextLevel()
     {
         SceneManager.LoadScene("SampleScene");
+        FindObjectOfType<AudioManager>().Play("BoutonBip");
     }
 
     public void HelpMenu()
@@ -20,11 +26,13 @@ public class MenuManager : MonoBehaviour
         {
             isAfficher = true;
             tuto.enabled = true;
+            FindObjectOfType<AudioManager>().Play("BoutonBip");
         }
         else
         {
             isAfficher = false;
             tuto.enabled = false;
+            FindObjectOfType<AudioManager>().Play("BoutonBip");
         }
     }
 
