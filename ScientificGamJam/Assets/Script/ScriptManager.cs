@@ -35,8 +35,8 @@ public class ScriptManager : MonoBehaviour
     void Start()
     {
 
-        win = false;
-        life = 10;
+        win = true;
+        life = 11;
         TimerStep = 1f;
         ListPlace.Add(Place1G);
         ListPlace.Add(Place1C);
@@ -69,7 +69,7 @@ public class ScriptManager : MonoBehaviour
 
     public void NextStep()
     {
-        if (win == true)
+        if (win == true && life <10)
         {
             life += 1;
         }

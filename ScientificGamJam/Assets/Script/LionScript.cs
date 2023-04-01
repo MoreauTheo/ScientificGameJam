@@ -5,56 +5,46 @@ using UnityEngine;
 public class LionScript : MonoBehaviour
 {
     public ScriptManager ScriptManager;
-    public int Place;
+    public int direction;
     public bool keyed;
+    public int indexsens;
+    public bool isPlan1;
     void Start()
     {
         keyed = false;
         ScriptManager = GameObject.Find("GameManager").GetComponent<ScriptManager>();
-        Place = 0;
+        indexsens = Random.Range(0, 2);
+        if (indexsens ==1)
+            transform.localScale = new Vector3(-transform.localScale.x, 1,1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Place == 0)
+        if (transform.localScale.x < 0)
+            direction = 1;
+        if(isPlan1 == false)
         {
-            if (transform.parent.name == "PlaceG1")
+            if (transform.parent.name == "PlaceG1"|| transform.parent.name == "PlaceC1"|| transform.parent.name == "PlaceD1")
             {
-                Place = 1;
-            }
-            if (transform.parent.name == "PlaceC1")
-            {
-                Place = 2;
-            }
-            if (transform.parent.name == "PlaceD1")
-            {
-                Place = 3;
+                isPlan1 = true;
             }
         }
 
-        if (keyed == false && (Place ==1 || Place == 2 || Place == 3))
+        if (keyed == false && isPlan1 == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Place == 1)
-                {
-                    ScriptManager.win = true;
-
-                }
-                keyed = true;
-            }
-            if ( Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (Place == 2)
+                if (direction == 1)
                 {
                     ScriptManager.win = true;
                 }
                 keyed = true;
             }
+            
             if ( Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (Place == 3)
+                if (direction == 0)
                 {
                     ScriptManager.win = true;
                 }
