@@ -81,6 +81,8 @@ public class ScriptManager : MonoBehaviour
             life -= 1;
         Debug.Log("Step");
         TimerStep = 1f;
+        if(keyed == false)
+            FindObjectOfType<AudioManager>().Play("Ambiance");
         keyed = false;
         if(life > 0)
         {

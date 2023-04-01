@@ -14,7 +14,7 @@ public class LionScript : MonoBehaviour
         ScriptManager = GameObject.Find("GameManager").GetComponent<ScriptManager>();
         indexsens = Random.Range(0, 2);
         if (indexsens ==1)
-            transform.localScale = new Vector3(-transform.localScale.x, 1,1);
+            transform.localScale = new Vector3(-1500, 1500,1500);
     }
 
     // Update is called once per frame
