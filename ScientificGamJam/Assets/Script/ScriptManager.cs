@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ScriptManager : MonoBehaviour
 {
     [Header("Var Settingd")]
     public bool win;
-    public float smoothFactor = 2f;
+    public float TranslateTime = 0.2f;
     [Header("Place Settings")]
     public GameObject Place1G;
     public GameObject Place1C;
@@ -112,32 +113,44 @@ public class ScriptManager : MonoBehaviour
     {
         if (Place1G.transform.childCount == 1)
         {
-            Destroy(Place1G.transform.GetChild(0).gameObject);
+            Transform detruit = Place1G.transform.GetChild(0);
+            detruit.parent = null;
+            Destroy(detruit.gameObject);
         }
         if (Place1C.transform.childCount == 1)
         {
-            Destroy(Place1C.transform.GetChild(0).gameObject);
+            Transform detruit = Place1C.transform.GetChild(0);
+            detruit.parent = null;
+            Destroy(detruit.gameObject);
         }
         if (Place1D.transform.childCount == 1)
         {
-            Destroy(Place1D.transform.GetChild(0).gameObject);
+            Transform detruit = Place1D.transform.GetChild(0);
+            detruit.parent = null;
+            Destroy(detruit.gameObject);
         }
         if (Place2G.transform.childCount ==1)
         {
-            Place2C.transform.GetChild(0).gameObject.transform.position = Place1C.transform.position;
-            Place2G.transform.GetChild(0).gameObject.transform.SetParent(Place1G.transform);
+            Place2G.transform.GetChild(0).SetParent(Place1G.transform);
+            Place1G.transform.GetChild(0).DOLocalMoveZ(0,TranslateTime).SetEase(Ease.OutSine);
+            //Place2G.transform.GetChild(0).gameObject.transform.position = Place1G.transform.position;
+            
             
 
         }
         if (Place2C.transform.childCount == 1)
         {
-            Place2C.transform.GetChild(0).gameObject.transform.position = Place1C.transform.position;
-            Place2C.transform.GetChild(0).gameObject.transform.SetParent(Place1C.transform);
+            Place2C.transform.GetChild(0).SetParent(Place1C.transform);
+            Place1C.transform.GetChild(0).DOLocalMoveZ(0, TranslateTime).SetEase(Ease.OutSine);
+            //Place2C.transform.GetChild(0).gameObject.transform.position = Place1C.transform.position;
+            
         }
         if (Place2D.transform.childCount == 1)
         {
-            Place2D.transform.GetChild(0).gameObject.transform.position = Place1D.transform.position;
-            Place2D.transform.GetChild(0).gameObject.transform.SetParent(Place1D.transform);
+            Place2D.transform.GetChild(0).SetParent(Place1D.transform);
+            Place1D.transform.GetChild(0).DOLocalMoveZ(0, TranslateTime).SetEase(Ease.OutSine);
+            //Place2D.transform.GetChild(0).gameObject.transform.position = Place1D.transform.position;
+            
         }
         
     }
