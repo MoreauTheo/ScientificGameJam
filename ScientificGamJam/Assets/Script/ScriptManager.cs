@@ -10,6 +10,7 @@ public class ScriptManager : MonoBehaviour
     [Header("Var Settingd")]
     public bool win;
     public float TranslateTime = 0.2f;
+    public bool keyed;
     [Header("Place Settings")]
     public GameObject Place1G;
     public GameObject Place1C;
@@ -80,7 +81,7 @@ public class ScriptManager : MonoBehaviour
             life -= 1;
         Debug.Log("Step");
         TimerStep = 1f;
-        
+        keyed = false;
         if(life > 0)
         {
             NextPlan();

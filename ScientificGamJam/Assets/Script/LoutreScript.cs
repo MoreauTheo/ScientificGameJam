@@ -6,17 +6,21 @@ public class LoutreScript : MonoBehaviour
 {
     public ScriptManager ScriptManager;
     public int Place;
-    public bool keyed;
     void Start()
     {
-        keyed = false;
+       
         ScriptManager = GameObject.Find("GameManager").GetComponent<ScriptManager>();
+        ScriptManager.keyed = false;
         Place = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ScriptManager.TimerStep <= 0 && ScriptManager.keyed == false)
+        {
+            FindObjectOfType<AudioManager>().Play("BadChoice");
+        }
         if(Place == 0)
         {
             if (transform.parent.name == "PlaceG1")
@@ -33,32 +37,41 @@ public class LoutreScript : MonoBehaviour
             }
         }
 
-        if (keyed == false && (Place ==1 || Place == 2 || Place == 3))
+        if (ScriptManager.keyed == false && (Place ==1 || Place == 2 || Place == 3))
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 if (Place == 1)
                 {
                     ScriptManager.win = true;
+                    FindObjectOfType<AudioManager>().Play("GoodChoice");
 
                 }
-                keyed = true;
+                else
+                    FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.keyed = true;
             }
             if ( Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if (Place == 2)
                 {
                     ScriptManager.win = true;
+                    FindObjectOfType<AudioManager>().Play("GoodChoice");
                 }
-                keyed = true;
+                else
+                    FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.keyed = true;
             }
             if ( Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (Place == 3)
                 {
                     ScriptManager.win = true;
+                    FindObjectOfType<AudioManager>().Play("GoodChoice");
                 }
-                keyed = true;
+                else
+                    FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.keyed = true;
             }
         }
         

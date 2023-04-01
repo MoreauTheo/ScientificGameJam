@@ -6,12 +6,11 @@ public class LionScript : MonoBehaviour
 {
     public ScriptManager ScriptManager;
     public int direction;
-    public bool keyed;
     public int indexsens;
     public bool isPlan1;
     void Start()
     {
-        keyed = false;
+        
         ScriptManager = GameObject.Find("GameManager").GetComponent<ScriptManager>();
         indexsens = Random.Range(0, 2);
         if (indexsens ==1)
@@ -21,6 +20,10 @@ public class LionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ScriptManager.TimerStep <= 0 && ScriptManager.keyed == false)
+        {
+            FindObjectOfType<AudioManager>().Play("BadChoice");
+        }
         if (transform.localScale.x < 0)
             direction = 1;
         if(isPlan1 == false)
@@ -31,15 +34,18 @@ public class LionScript : MonoBehaviour
             }
         }
 
-        if (keyed == false && isPlan1 == true)
+        if (ScriptManager.keyed == false && isPlan1 == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 if (direction == 1)
                 {
                     ScriptManager.win = true;
+                    FindObjectOfType<AudioManager>().Play("GoodChoice");
                 }
-                keyed = true;
+                else
+                    FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.keyed = true;
             }
             
             if ( Input.GetKeyDown(KeyCode.RightArrow))
@@ -47,8 +53,11 @@ public class LionScript : MonoBehaviour
                 if (direction == 0)
                 {
                     ScriptManager.win = true;
+                    FindObjectOfType<AudioManager>().Play("GoodChoice");
                 }
-                keyed = true;
+                else
+                    FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.keyed = true;
             }
         }
         
