@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,7 +357,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403212669
 GameObject:
@@ -1045,7 +1045,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &894117500
 GameObject:
@@ -1295,7 +1295,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 13.629, y: 0, z: 0}
 --- !u!1 &978037680
 GameObject:
@@ -1557,7 +1557,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484215064
 GameObject:
@@ -1691,7 +1691,7 @@ Transform:
   - {fileID: 403212670}
   - {fileID: 1484215065}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1595340814
 GameObject:
@@ -2114,7 +2114,7 @@ RectTransform:
   - {fileID: 894117502}
   - {fileID: 1595340815}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2227,10 +2227,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0.362
-    pitch: 0.1
+  - name: Theme
+    clip: {fileID: 8300000, guid: 44adab3c532d55e489b7dab2643fc578, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Ambiance
+    clip: {fileID: 8300000, guid: 6beb96bf0e7a997479eddaacc5514b8a, type: 3}
+    volume: 0.415
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Danger
+    clip: {fileID: 8300000, guid: ab68c67229c4f6248b2c7b0acba78f83, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GoodChoice
+    clip: {fileID: 8300000, guid: d07b65f1cd887864e812de85cfede25e, type: 3}
+    volume: 0.275
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ReponseVide
+    clip: {fileID: 8300000, guid: 64f928ef50d6ec647806d9cb1a5cc471, type: 3}
+    volume: 0.185
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BadChoice
+    clip: {fileID: 8300000, guid: f98da82824404904c990f069f6ea4dc0, type: 3}
+    volume: 0.297
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Velcro
+    clip: {fileID: 8300000, guid: 2b979319887ab87418149ca22d568ea7, type: 3}
+    volume: 0.297
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &2085710450
@@ -2246,5 +2282,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
