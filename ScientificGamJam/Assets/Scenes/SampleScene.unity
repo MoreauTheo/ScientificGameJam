@@ -2854,6 +2854,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Defaite
+    clip: {fileID: 8300000, guid: 5ac51064ce0127f468615067c9ffe341, type: 3}
+    volume: 0.297
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2085710450
 Transform:
   m_ObjectHideFlags: 0

@@ -41,7 +41,7 @@ public class PareScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Place == 1 && ScriptManager.TimerStep <=0.2f)
+                if (Place == 1 && ScriptManager.TimerStep <=0.25f)
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
@@ -53,7 +53,7 @@ public class PareScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (Place == 2 && ScriptManager.TimerStep <= 0.2f)
+                if (Place == 2 && ScriptManager.TimerStep <= 0.25f)
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
@@ -64,7 +64,7 @@ public class PareScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (Place == 3 && ScriptManager.TimerStep <= 0.2f)
+                if (Place == 3 && ScriptManager.TimerStep <= 0.25f)
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
