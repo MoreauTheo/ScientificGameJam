@@ -42,7 +42,7 @@ public class ScriptManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
-        FindObjectOfType<AudioManager>().Play("Danger");
+        
 
 
         win = true;
@@ -99,6 +99,10 @@ public class ScriptManager : MonoBehaviour
             ActualEnnemi = Instantiate(WikiEnnemi[Random.Range(0, WikiEnnemi.Count)], ListPlace3[SpawnIndex].transform.position, ListPlace3[SpawnIndex].transform.rotation);
             ActualEnnemi.transform.SetParent(ListPlace3[SpawnIndex].transform);
             win = false;
+            if(life<=3)
+                FindObjectOfType<AudioManager>().Play("Danger");
+            else
+                FindObjectOfType<AudioManager>().Stop("Danger");
         }
     }
     public void Loose()
@@ -123,7 +127,7 @@ public class ScriptManager : MonoBehaviour
         DebugSlider.gameObject.SetActive(true);
         LifeBar.gameObject.SetActive(true);
         win = true;
-        life = 10;
+        life = 11;
         NextStep();
     }
 

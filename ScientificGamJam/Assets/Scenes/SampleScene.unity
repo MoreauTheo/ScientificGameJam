@@ -2610,7 +2610,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Danger
     clip: {fileID: 8300000, guid: ab68c67229c4f6248b2c7b0acba78f83, type: 3}
-    volume: 0.49
+    volume: 0.347
     pitch: 1
     loop: 1
     source: {fileID: 0}
