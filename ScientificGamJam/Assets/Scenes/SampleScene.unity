@@ -209,8 +209,9 @@ MonoBehaviour:
   SpawnIndex: 0
   WikiEnnemi:
   - {fileID: 1741581653278070134, guid: f6cffe45cb213f14ca7010a17771bc14, type: 3}
-  - {fileID: 1155777646112393052, guid: 023610fe81845da4099b2543616f432e, type: 3}
+  - {fileID: 7454227519114555645, guid: 2d5ebe11a9fbe7d428e162f1327c5a8d, type: 3}
   - {fileID: 2041255996121851317, guid: de745546f73c8b44abd5cda9fde67d3b, type: 3}
+  - {fileID: 9081304151862056854, guid: 70c123291fb924a4a9083880e7fa283e, type: 3}
   LifeBar: {fileID: 894117501}
   life: 0
   DebugSlider: {fileID: 674925524}
