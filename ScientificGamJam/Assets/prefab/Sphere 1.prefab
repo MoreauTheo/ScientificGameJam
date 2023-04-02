@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6797558072040629361}
   - component: {fileID: -7709832976792595546}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Sphere 1
   m_TagString: Pet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e392a33bfb0d7954dbb6e21a5e2dc9f2, type: 2}
+  - {fileID: 2100000, guid: 9231072461f1efe439812bc2abd678be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
