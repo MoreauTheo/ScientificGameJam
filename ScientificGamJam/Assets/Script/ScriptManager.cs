@@ -100,10 +100,7 @@ public class ScriptManager : MonoBehaviour
             ActualEnnemi = Instantiate(WikiEnnemi[Random.Range(0, WikiEnnemi.Count)], ListPlace3[SpawnIndex].transform.position, ListPlace3[SpawnIndex].transform.rotation);
             ActualEnnemi.transform.SetParent(ListPlace3[SpawnIndex].transform);
             win = false;
-            if (life <= 3)
-                DangerGO.Play();
-            else
-                DangerGO.Stop();
+            
             
         }
     }

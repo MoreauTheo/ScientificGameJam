@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6e26b8d2382254a8c0a40dcf8d305d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepGap: 0.6
+  StepGap: 0.7
   win: 1
   TranslateTime: 0.1
   keyed: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   WikiEnnemi:
   - {fileID: 1741581653278070134, guid: f6cffe45cb213f14ca7010a17771bc14, type: 3}
   - {fileID: 1155777646112393052, guid: 023610fe81845da4099b2543616f432e, type: 3}
+  - {fileID: 2041255996121851317, guid: de745546f73c8b44abd5cda9fde67d3b, type: 3}
   LifeBar: {fileID: 894117501}
   life: 0
   DebugSlider: {fileID: 674925524}
@@ -714,7 +715,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 0.7
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
