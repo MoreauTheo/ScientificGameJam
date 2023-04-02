@@ -36,13 +36,14 @@ public class ScriptManager : MonoBehaviour
     public Slider DebugSlider;
     public float TimerStep;
     public GameObject LoosePanel;
+    public AudioSource DangerGO;
 
 
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
-        
+
 
 
         win = true;
@@ -99,10 +100,11 @@ public class ScriptManager : MonoBehaviour
             ActualEnnemi = Instantiate(WikiEnnemi[Random.Range(0, WikiEnnemi.Count)], ListPlace3[SpawnIndex].transform.position, ListPlace3[SpawnIndex].transform.rotation);
             ActualEnnemi.transform.SetParent(ListPlace3[SpawnIndex].transform);
             win = false;
-            if(life<=3)
-                FindObjectOfType<AudioManager>().Play("Danger");
+            if (life <= 3)
+                DangerGO.Play();
             else
-                FindObjectOfType<AudioManager>().Stop("Danger");
+                DangerGO.Stop();
+            
         }
     }
     public void Loose()
