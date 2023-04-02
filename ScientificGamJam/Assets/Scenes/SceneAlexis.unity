@@ -217,6 +217,8 @@ MonoBehaviour:
   TimerStep: 0
   LoosePanel: {fileID: 1595340814}
   DangerGO: {fileID: 449242790}
+  actualScore: 0
+  bestScore: 0
 --- !u!4 &400692016
 Transform:
   m_ObjectHideFlags: 0
@@ -2864,7 +2866,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7262fa1008718ad40afe2e6c3a365b0c, type: 3}
     volume: 0.14
     pitch: 1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &2085710450
 Transform:

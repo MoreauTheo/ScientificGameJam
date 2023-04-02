@@ -37,12 +37,15 @@ public class ScriptManager : MonoBehaviour
     public float TimerStep;
     public GameObject LoosePanel;
     public AudioSource DangerGO;
+    public float actualScore = 0;
+    public float bestScore = 0;
 
 
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
+        actualScore = 0;
 
         win = true;
         life = 11;
@@ -130,6 +133,7 @@ public class ScriptManager : MonoBehaviour
         LifeBar.gameObject.SetActive(true);
         win = true;
         life = 11;
+        actualScore = 0;
         NextStep();
     }
 
