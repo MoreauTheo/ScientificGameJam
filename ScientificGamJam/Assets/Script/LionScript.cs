@@ -14,7 +14,7 @@ public class LionScript : MonoBehaviour
         ScriptManager = GameObject.Find("GameManager").GetComponent<ScriptManager>();
         indexsens = Random.Range(0, 2);
         if (indexsens ==1)
-            transform.localScale = new Vector3(-1500, 1500,1500);
+            transform.localScale = new Vector3(1500, -1500,1500);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class LionScript : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("BadChoice");
         }
-        if (transform.localScale.x < 0)
+        if (transform.localScale.y < 0)
             direction = 1;
         if(isPlan1 == false)
         {
