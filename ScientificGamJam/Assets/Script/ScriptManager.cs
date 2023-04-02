@@ -42,6 +42,7 @@ public class ScriptManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
+        FindObjectOfType<AudioManager>().Play("Danger");
 
 
         win = true;
