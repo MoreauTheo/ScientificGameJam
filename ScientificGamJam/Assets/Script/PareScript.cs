@@ -19,7 +19,7 @@ public class PareScript : MonoBehaviour
     {
         if (ScriptManager.TimerStep <= 0 && ScriptManager.keyed == false)
         {
-            FindObjectOfType<AudioManager>().Play("BadChoice");
+            FindObjectOfType<AudioManager>().Play("Velcro");
         }
         if (Place == 0)
         {

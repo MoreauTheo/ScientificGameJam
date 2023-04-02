@@ -32,7 +32,7 @@ public class ScriptManager : MonoBehaviour
     public List<GameObject> WikiEnnemi;
     [Header("User Settings")]
     public Slider LifeBar;
-    public int life;
+    public float life;
     public Slider DebugSlider;
     public float TimerStep;
     public GameObject LoosePanel;
@@ -43,8 +43,6 @@ public class ScriptManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
-
-
 
         win = true;
         life = 11;
@@ -77,6 +75,8 @@ public class ScriptManager : MonoBehaviour
         LifeBar.value = life;
         if(life <=0 )
         {
+
+            FindObjectOfType<AudioManager>().Play("Loser");
             Loose();
         }
     }
@@ -85,11 +85,11 @@ public class ScriptManager : MonoBehaviour
     {
         if (win == true && life <10)
         {
-            life += 1;
+            life += 0.5f;
         }
         else
             life -= 1;
-        Debug.Log("Step");
+        //Debug.Log("Step");
         TimerStep = StepGap;
             
         keyed = false;
@@ -106,6 +106,7 @@ public class ScriptManager : MonoBehaviour
     }
     public void Loose()
     {
+
         GameObject[] ADetruire = GameObject.FindGameObjectsWithTag("Pet");
         foreach (GameObject pet in ADetruire)
         {
@@ -122,6 +123,8 @@ public class ScriptManager : MonoBehaviour
 
     public void Restart()
     {
+        FindObjectOfType<AudioManager>().Play("BoutonBip");
+
         LoosePanel.SetActive(false);
         DebugSlider.gameObject.SetActive(true);
         LifeBar.gameObject.SetActive(true);
