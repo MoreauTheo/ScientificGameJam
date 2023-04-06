@@ -137,7 +137,7 @@ public class ScriptManager : MonoBehaviour
         if (ennemyfinal == "camel")
             indice.text = "Aie, le caméléon t'a eu! \n Lorsqu'il s'approche de toi, il apparait au dernier \n moment! Trouve LA réponse qui lui correspond afin \n d'être réactif.";
         if (ennemyfinal == "")
-            indice.text = "Aie, tu n'a rien fait! \n Essaie toujours d'apprendre comment fonctionne un animal \n Ce n'est pas grave de se tromepr et de perdre.";
+            indice.text = "Aie, tu n'a rien fait! \n Essaie toujours d'apprendre comment fonctionne un animal \n Ce n'est pas grave de se tromper et de perdre.";
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             Restart();
     }
