@@ -45,11 +45,18 @@ public class PareScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
 
                 }
                 else
+                {
+                    Debug.Log(ScriptManager.ennemyfinal);
+                    ScriptManager.ennemyfinal = "pare";
                     FindObjectOfType<AudioManager>().Play("BadChoice");
+                }
+                    
                 ScriptManager.keyed = true;
+                
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -57,10 +64,16 @@ public class PareScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
+                {
+                    Debug.Log(ScriptManager.ennemyfinal);
+                    ScriptManager.ennemyfinal = "pare";
                     FindObjectOfType<AudioManager>().Play("BadChoice");
+                }
                 ScriptManager.keyed = true;
+                
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -68,10 +81,16 @@ public class PareScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
+                {
+                    Debug.Log(ScriptManager.ennemyfinal);
+                    ScriptManager.ennemyfinal = "pare";
                     FindObjectOfType<AudioManager>().Play("BadChoice");
+                }
                 ScriptManager.keyed = true;
+                
             }
         }
 

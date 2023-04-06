@@ -42,9 +42,11 @@ public class LionScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
                     FindObjectOfType<AudioManager>().Play("BadChoice");
+                ScriptManager.ennemyfinal = "lion";
                 ScriptManager.keyed = true;
             }
             
@@ -54,10 +56,12 @@ public class LionScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
                     FindObjectOfType<AudioManager>().Play("BadChoice");
                 ScriptManager.keyed = true;
+                ScriptManager.ennemyfinal = "lion";
             }
         }
         

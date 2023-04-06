@@ -17,6 +17,7 @@ public class CameleonScript : MonoBehaviour
     public List<Mesh> listfalsemesh;
     public int index;
     public bool isPlan1;
+    public int score = 0;
 
     void Start()
     {
@@ -60,6 +61,8 @@ public class CameleonScript : MonoBehaviour
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
                     ScriptManager.keyed = true;
+                    ScriptManager.score ++;
+
             }
                
                 
@@ -70,8 +73,8 @@ public class CameleonScript : MonoBehaviour
                 
                     
                  FindObjectOfType<AudioManager>().Play("Badchoice");
-                
-               
+
+                ScriptManager.ennemyfinal = "camel";
                 ScriptManager.keyed = true;
             }
         }

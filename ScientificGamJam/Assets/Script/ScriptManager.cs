@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+
 
 public class ScriptManager : MonoBehaviour
 {
+    public TMP_Text scorefield;
     [Header("Var Settingd")]
+    public string ennemyfinal;
+    public int score;
+    public TMP_Text indice;
     public float StepGap;
     public bool win;
     public float TranslateTime = 0.2f;
@@ -46,7 +53,6 @@ public class ScriptManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Play("Ambiance");
         actualScore = 0;
-
         win = true;
         life = 11;
         TimerStep = StepGap;
@@ -67,8 +73,11 @@ public class ScriptManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
+        if(Input.GetKeyDown(KeyCode.F12))
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        scorefield.text = "Score : " + score;
         TimerStep -= Time.deltaTime;
         DebugSlider.value = TimerStep;
         if (TimerStep <= 0)
@@ -103,6 +112,7 @@ public class ScriptManager : MonoBehaviour
             ActualEnnemi = Instantiate(WikiEnnemi[Random.Range(0, WikiEnnemi.Count)], ListPlace3[SpawnIndex].transform.position, ListPlace3[SpawnIndex].transform.rotation);
             ActualEnnemi.transform.SetParent(ListPlace3[SpawnIndex].transform);
             win = false;
+            ennemyfinal = "";
             
             
         }
@@ -118,8 +128,16 @@ public class ScriptManager : MonoBehaviour
         LoosePanel.SetActive(true);
         DebugSlider.gameObject.SetActive(false);
         LifeBar.gameObject.SetActive(false);
-        
-        
+        if (ennemyfinal == "lion")
+            indice.text = "Aie, le lion t'a eu! \n Lorsqu'il s'approche de toi, soit attentif à la \n direction vers laquelle il regarde";
+        if (ennemyfinal == "loutre")
+            indice.text = "Aie, la loutre t'a eu! \n Lorsqu'elle s'approche de toi, soit attentif au couloir \n dans laquelle elle se trouve";
+        if (ennemyfinal == "pare")
+            indice.text = "Aie, le paresseux t'a eu! \n Lorsqu'il s'approche de toi, ne réponds pas trop vite \n pour ne pas le brusquer !";
+        if (ennemyfinal == "camel")
+            indice.text = "Aie, le caméléon t'a eu! \n Lorsqu'il s'approche de toi, il apparait au dernier \n moment! Trouve LA réponse qui lui correspond afin \n d'être réactif.";
+        if (ennemyfinal == "")
+            indice.text = "Aie, tu n'a rien fait! \n Essaie toujours d'apprendre comment fonctionne un animal \n Ce n'est pas grave de se tromepr et de perdre.";
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             Restart();
     }
@@ -133,7 +151,8 @@ public class ScriptManager : MonoBehaviour
         LifeBar.gameObject.SetActive(true);
         win = true;
         life = 11;
-        actualScore = 0;
+        score = 0;
+        ennemyfinal = "";
         NextStep();
     }
 

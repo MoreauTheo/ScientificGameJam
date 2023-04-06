@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("SceneAlexis");
+        SceneManager.LoadScene("SampleScene");
         FindObjectOfType<AudioManager>().Play("BoutonBip");
     }
 

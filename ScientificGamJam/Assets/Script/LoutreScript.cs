@@ -45,11 +45,13 @@ public class LoutreScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
 
                 }
                 else
                     FindObjectOfType<AudioManager>().Play("BadChoice");
                 ScriptManager.keyed = true;
+                ScriptManager.ennemyfinal = "loutre";
             }
             if ( Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -57,10 +59,12 @@ public class LoutreScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
                     FindObjectOfType<AudioManager>().Play("BadChoice");
                 ScriptManager.keyed = true;
+                ScriptManager.ennemyfinal = "loutre";
             }
             if ( Input.GetKeyDown(KeyCode.RightArrow))
             {
@@ -68,10 +72,12 @@ public class LoutreScript : MonoBehaviour
                 {
                     ScriptManager.win = true;
                     FindObjectOfType<AudioManager>().Play("GoodChoice");
+                    ScriptManager.score++;
                 }
                 else
                     FindObjectOfType<AudioManager>().Play("BadChoice");
                 ScriptManager.keyed = true;
+                ScriptManager.ennemyfinal = "loutre";
             }
         }
         
